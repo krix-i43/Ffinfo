@@ -30,7 +30,7 @@ def get_jwt_token_sync(region):
         "US": "https://jwt-token-api-by-ajay.vercel.app/token?uid=4422013059&password=9A14867BBA0091781F5BBAC54DDC945B7C3B317B5C35E01AA62BC67DD910F22F",
         "SAC": "https://jwt-token-api-by-ajay.vercel.app/token?uid=4422013059&password=9A14867BBA0091781F5BBAC54DDC945B7C3B317B5C35E01AA62BC67DD910F22F",
         "NA": "https://jwt-token-api-by-ajay.vercel.app/token?uid=4422013059&password=9A14867BBA0091781F5BBAC54DDC945B7C3B317B5C35E01AA62BC67DD910F22F",
-        "default": "https://jwt-token-api-by-ajay.vercel.app/token?uid=4422013059&password=9A14867BBA0091781F5BBAC54DDC945B7C3B317B5C35E01AA62BC67DD910F22F"
+        "default": "https://nivashini-bio.vercel.app/token?uid=4311778541&pass=JOBAYAR_X0JZE7DD910F22F"
     }    
     url = endpoints.get(region, endpoints["default"])
     with jwt_lock:
@@ -67,7 +67,7 @@ def get_api_endpoint(region):
         "US": "https://client.us.freefiremobile.com/GetPlayerPersonalShow",
         "SAC": "https://client.us.freefiremobile.com/GetPlayerPersonalShow",
         "NA": "https://client.us.freefiremobile.com/GetPlayerPersonalShow",
-        "default": "https://clientbp.ggblueshark.com/GetPlayerPersonalShow"
+        "default": "https://client.ind.freefiremobile.com/GetPlayerPersonalShow"
     }
     return endpoints.get(region, endpoints["default"])
 key = "Yg&tc%DEuh6%Zc^8"
@@ -130,7 +130,7 @@ def get_player_info():
         message = AccountPersonalShowInfo()
         message.ParseFromString(bytes.fromhex(api_response)) 
         result = MessageToDict(message)
-        result['Owners'] = ['agajayofficial']
+        result['Owner'] = ['Nivashini']
         return jsonify(result)
     except ValueError:
         return jsonify({"error": "Invalid UID format"}), 400
