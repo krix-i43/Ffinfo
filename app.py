@@ -92,7 +92,7 @@ def apis(idd, region):
         'Authorization': f'Bearer {token}',
         'X-Unity-Version': '2018.4.11f1',
         'X-GA': 'v1 1',
-        'ReleaseVersion': 'OB52',
+        'ReleaseVersion': 'OB54',
         'Content-Type': 'application/x-www-form-urlencoded',
     }    
     try:
@@ -140,6 +140,3 @@ def get_player_info():
 @app.route('/favicon.ico')
 def favicon():
     return '', 404
-if __name__ == "__main__":
-    ensure_jwt_token_sync("default")
-    app.run(host="0.0.0.0", port=5552)
